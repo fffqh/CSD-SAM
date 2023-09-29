@@ -1,6 +1,5 @@
 # CSD-SAM code hub
-
-https://github.com/fffqh/CSD-SAM/assets/51227522/0ed5d1cc-0d63-4db7-bdc7-cbdc7150df6d
+![image](assert/output_csd.gif)
 
 ## Environments
 
@@ -60,3 +59,9 @@ python video2img.py
 ```
 
 ## Acknowledgments
+- [FlowFormer](https://github.com/drinkingcoder/FlowFormer-Official)
+- [SAM](https://github.com/facebookresearch/segment-anything)
+
+## License
+The model is licensed under the [Apache 2.0 license](LICENSE).
+
