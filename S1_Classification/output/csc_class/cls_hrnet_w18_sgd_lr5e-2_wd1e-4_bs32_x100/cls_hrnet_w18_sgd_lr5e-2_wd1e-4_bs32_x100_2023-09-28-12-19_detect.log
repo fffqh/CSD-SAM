@@ -1,0 +1,304 @@
+2023-09-28 12:19:14,336 Namespace(cfg='experiments/cls_hrnet_w18_sgd_lr5e-2_wd1e-4_bs32_x100.yaml', dataDir='../data/flw_imgs/csd', testModel='best_state.pth')
+2023-09-28 12:19:14,337 {'AUTO_RESUME': False,
+ 'CUDNN': CfgNode({'BENCHMARK': True, 'DETERMINISTIC': False, 'ENABLED': True}),
+ 'DATASET': {'COLOR_RGB': False,
+             'DATASET': 'csc_class',
+             'DATA_FORMAT': 'png',
+             'FLIP': True,
+             'HYBRID_JOINTS_TYPE': '',
+             'NUM_JOINTS_HALF_BODY': 8,
+             'PROB_HALF_BODY': 0.0,
+             'ROOT': '/root/autodl-tmp/csc_hr_class_data/',
+             'ROT_FACTOR': 30,
+             'SCALE_FACTOR': 0.25,
+             'SELECT_DATA': False,
+             'TEST_SET': 'test',
+             'TRAIN_SET': 'train'},
+ 'DATA_DIR': '../data/flw_imgs/csd',
+ 'DEBUG': {'DEBUG': False,
+           'SAVE_BATCH_IMAGES_GT': False,
+           'SAVE_BATCH_IMAGES_PRED': False,
+           'SAVE_HEATMAPS_GT': False,
+           'SAVE_HEATMAPS_PRED': False},
+ 'GPUS': (0,),
+ 'LOG_DIR': 'log/',
+ 'LOSS': {'TOPK': 8,
+          'USE_DIFFERENT_JOINTS_WEIGHT': False,
+          'USE_OHKM': False,
+          'USE_TARGET_WEIGHT': True},
+ 'MODEL': {'EXTRA': {'STAGE1': {'BLOCK': 'BOTTLENECK',
+                                'FUSE_METHOD': 'SUM',
+                                'NUM_BLOCKS': [4],
+                                'NUM_CHANNELS': [64],
+                                'NUM_MODULES': 1,
+                                'NUM_RANCHES': 1},
+                     'STAGE2': {'BLOCK': 'BASIC',
+                                'FUSE_METHOD': 'SUM',
+                                'NUM_BLOCKS': [4, 4],
+                                'NUM_BRANCHES': 2,
+                                'NUM_CHANNELS': [18, 36],
+                                'NUM_MODULES': 1},
+                     'STAGE3': {'BLOCK': 'BASIC',
+                                'FUSE_METHOD': 'SUM',
+                                'NUM_BLOCKS': [4, 4, 4],
+                                'NUM_BRANCHES': 3,
+                                'NUM_CHANNELS': [18, 36, 72],
+                                'NUM_MODULES': 4},
+                     'STAGE4': {'BLOCK': 'BASIC',
+                                'FUSE_METHOD': 'SUM',
+                                'NUM_BLOCKS': [4, 4, 4, 4],
+                                'NUM_BRANCHES': 4,
+                                'NUM_CHANNELS': [18, 36, 72, 144],
+                                'NUM_MODULES': 3}},
+           'HEATMAP_SIZE': [64, 64],
+           'IMAGE_SIZE': [224, 224],
+           'INIT_WEIGHTS': True,
+           'NAME': 'cls_hrnet',
+           'NUM_CLASSES': 1000,
+           'NUM_JOINTS': 17,
+           'PRETRAINED': '',
+           'SIGMA': 2,
+           'TAG_PER_JOINT': True,
+           'TARGET_TYPE': 'gaussian'},
+ 'OUTPUT_DIR': 'output/',
+ 'PIN_MEMORY': True,
+ 'PRINT_FREQ': 1000,
+ 'RANK': 0,
+ 'TEST': {'BATCH_SIZE_PER_GPU': 32,
+          'BBOX_THRE': 1.0,
+          'COCO_BBOX_FILE': '',
+          'FLIP_TEST': False,
+          'IMAGE_THRE': 0.1,
+          'IN_VIS_THRE': 0.0,
+          'MODEL_FILE': 'best_state.pth',
+          'NMS_THRE': 0.6,
+          'OKS_THRE': 0.5,
+          'POST_PROCESS': False,
+          'SHIFT_HEATMAP': False,
+          'SOFT_NMS': False,
+          'USE_GT_BBOX': False},
+ 'TRAIN': {'BATCH_SIZE_PER_GPU': 32,
+           'BEGIN_EPOCH': 0,
+           'CHECKPOINT': '',
+           'END_EPOCH': 100,
+           'GAMMA1': 0.99,
+           'GAMMA2': 0.0,
+           'LR': 0.05,
+           'LR_FACTOR': 0.1,
+           'LR_STEP': [30, 60, 90],
+           'MOMENTUM': 0.9,
+           'NESTEROV': True,
+           'OPTIMIZER': 'sgd',
+           'RESUME': True,
+           'SHUFFLE': True,
+           'WD': 0.0001},
+ 'WORKERS': 4}
+2023-09-28 12:19:14,580 => init weights from normal distribution
+2023-09-28 12:19:15,072 
+Total Parameters: 19,254,102
+----------------------------------------------------------------------------------------------------------------------------------
+Total Multiply Adds (For Convolution and Linear Layers only): 3.9874512404203415 GFLOPs
+----------------------------------------------------------------------------------------------------------------------------------
+Number of Layers
+Conv2d : 325 layers   BatchNorm2d : 325 layers   ReLU : 284 layers   Bottleneck : 8 layers   BasicBlock : 104 layers   Upsample : 31 layers   HighResolutionModule : 8 layers   Linear : 1 layers   
+2023-09-28 12:19:15,073 => loading model from best_state.pth
+2023-09-28 12:19:22,126 File:001.png	pred:False	
+2023-09-28 12:19:22,127 File:002.png	pred:True	
+2023-09-28 12:19:22,127 File:003.png	pred:True	
+2023-09-28 12:19:22,127 File:004.png	pred:True	
+2023-09-28 12:19:22,127 File:005.png	pred:True	
+2023-09-28 12:19:22,127 File:006.png	pred:True	
+2023-09-28 12:19:22,127 File:007.png	pred:True	
+2023-09-28 12:19:22,127 File:008.png	pred:True	
+2023-09-28 12:19:22,127 File:009.png	pred:True	
+2023-09-28 12:19:22,128 File:010.png	pred:True	
+2023-09-28 12:19:22,128 File:011.png	pred:True	
+2023-09-28 12:19:22,128 File:012.png	pred:True	
+2023-09-28 12:19:22,128 File:013.png	pred:True	
+2023-09-28 12:19:22,128 File:014.png	pred:True	
+2023-09-28 12:19:22,128 File:015.png	pred:True	
+2023-09-28 12:19:22,128 File:016.png	pred:False	
+2023-09-28 12:19:22,128 File:017.png	pred:True	
+2023-09-28 12:19:22,128 File:018.png	pred:True	
+2023-09-28 12:19:22,128 File:019.png	pred:False	
+2023-09-28 12:19:22,128 File:020.png	pred:False	
+2023-09-28 12:19:22,128 File:021.png	pred:False	
+2023-09-28 12:19:22,129 File:022.png	pred:False	
+2023-09-28 12:19:22,129 File:023.png	pred:False	
+2023-09-28 12:19:22,129 File:024.png	pred:False	
+2023-09-28 12:19:22,129 File:025.png	pred:False	
+2023-09-28 12:19:22,129 File:026.png	pred:False	
+2023-09-28 12:19:22,129 File:027.png	pred:False	
+2023-09-28 12:19:22,129 File:028.png	pred:False	
+2023-09-28 12:19:22,129 File:029.png	pred:False	
+2023-09-28 12:19:22,129 File:030.png	pred:False	
+2023-09-28 12:19:22,129 File:031.png	pred:False	
+2023-09-28 12:19:22,129 File:032.png	pred:False	
+2023-09-28 12:19:22,182 File:033.png	pred:False	
+2023-09-28 12:19:22,183 File:034.png	pred:False	
+2023-09-28 12:19:22,183 File:035.png	pred:False	
+2023-09-28 12:19:22,183 File:036.png	pred:False	
+2023-09-28 12:19:22,183 File:037.png	pred:False	
+2023-09-28 12:19:22,183 File:038.png	pred:False	
+2023-09-28 12:19:22,183 File:039.png	pred:False	
+2023-09-28 12:19:22,183 File:040.png	pred:False	
+2023-09-28 12:19:22,183 File:041.png	pred:False	
+2023-09-28 12:19:22,184 File:042.png	pred:False	
+2023-09-28 12:19:22,184 File:043.png	pred:False	
+2023-09-28 12:19:22,184 File:044.png	pred:False	
+2023-09-28 12:19:22,184 File:045.png	pred:False	
+2023-09-28 12:19:22,184 File:046.png	pred:False	
+2023-09-28 12:19:22,184 File:047.png	pred:False	
+2023-09-28 12:19:22,185 File:048.png	pred:False	
+2023-09-28 12:19:22,185 File:049.png	pred:False	
+2023-09-28 12:19:22,185 File:050.png	pred:False	
+2023-09-28 12:19:22,185 File:051.png	pred:False	
+2023-09-28 12:19:22,185 File:052.png	pred:False	
+2023-09-28 12:19:22,186 File:053.png	pred:False	
+2023-09-28 12:19:22,186 File:054.png	pred:False	
+2023-09-28 12:19:22,186 File:055.png	pred:False	
+2023-09-28 12:19:22,186 File:056.png	pred:False	
+2023-09-28 12:19:22,186 File:057.png	pred:False	
+2023-09-28 12:19:22,186 File:058.png	pred:False	
+2023-09-28 12:19:22,187 File:059.png	pred:False	
+2023-09-28 12:19:22,187 File:060.png	pred:False	
+2023-09-28 12:19:22,187 File:061.png	pred:False	
+2023-09-28 12:19:22,188 File:062.png	pred:False	
+2023-09-28 12:19:22,188 File:063.png	pred:False	
+2023-09-28 12:19:22,188 File:064.png	pred:False	
+2023-09-28 12:19:22,250 File:065.png	pred:True	
+2023-09-28 12:19:22,251 File:066.png	pred:False	
+2023-09-28 12:19:22,251 File:067.png	pred:True	
+2023-09-28 12:19:22,251 File:068.png	pred:True	
+2023-09-28 12:19:22,251 File:069.png	pred:True	
+2023-09-28 12:19:22,251 File:070.png	pred:True	
+2023-09-28 12:19:22,251 File:071.png	pred:True	
+2023-09-28 12:19:22,251 File:072.png	pred:True	
+2023-09-28 12:19:22,251 File:073.png	pred:True	
+2023-09-28 12:19:22,251 File:074.png	pred:True	
+2023-09-28 12:19:22,252 File:075.png	pred:True	
+2023-09-28 12:19:22,252 File:076.png	pred:True	
+2023-09-28 12:19:22,252 File:077.png	pred:True	
+2023-09-28 12:19:22,252 File:078.png	pred:True	
+2023-09-28 12:19:22,252 File:079.png	pred:True	
+2023-09-28 12:19:22,252 File:080.png	pred:True	
+2023-09-28 12:19:22,252 File:081.png	pred:True	
+2023-09-28 12:19:22,252 File:082.png	pred:True	
+2023-09-28 12:19:22,252 File:083.png	pred:True	
+2023-09-28 12:19:22,252 File:084.png	pred:False	
+2023-09-28 12:19:22,252 File:085.png	pred:False	
+2023-09-28 12:19:22,253 File:086.png	pred:False	
+2023-09-28 12:19:22,253 File:087.png	pred:False	
+2023-09-28 12:19:22,253 File:088.png	pred:False	
+2023-09-28 12:19:22,253 File:089.png	pred:False	
+2023-09-28 12:19:22,253 File:090.png	pred:False	
+2023-09-28 12:19:22,253 File:091.png	pred:False	
+2023-09-28 12:19:22,253 File:092.png	pred:False	
+2023-09-28 12:19:22,253 File:093.png	pred:False	
+2023-09-28 12:19:22,253 File:094.png	pred:False	
+2023-09-28 12:19:22,253 File:095.png	pred:False	
+2023-09-28 12:19:22,253 File:096.png	pred:False	
+2023-09-28 12:19:22,308 File:097.png	pred:False	
+2023-09-28 12:19:22,308 File:098.png	pred:False	
+2023-09-28 12:19:22,308 File:099.png	pred:False	
+2023-09-28 12:19:22,308 File:100.png	pred:False	
+2023-09-28 12:19:22,308 File:101.png	pred:False	
+2023-09-28 12:19:22,308 File:102.png	pred:False	
+2023-09-28 12:19:22,309 File:103.png	pred:False	
+2023-09-28 12:19:22,309 File:104.png	pred:False	
+2023-09-28 12:19:22,312 File:105.png	pred:False	
+2023-09-28 12:19:22,312 File:106.png	pred:False	
+2023-09-28 12:19:22,312 File:107.png	pred:False	
+2023-09-28 12:19:22,312 File:108.png	pred:False	
+2023-09-28 12:19:22,312 File:109.png	pred:False	
+2023-09-28 12:19:22,312 File:110.png	pred:False	
+2023-09-28 12:19:22,313 File:111.png	pred:False	
+2023-09-28 12:19:22,313 File:112.png	pred:False	
+2023-09-28 12:19:22,313 File:113.png	pred:False	
+2023-09-28 12:19:22,313 File:114.png	pred:False	
+2023-09-28 12:19:22,313 File:115.png	pred:False	
+2023-09-28 12:19:22,313 File:116.png	pred:False	
+2023-09-28 12:19:22,313 File:117.png	pred:False	
+2023-09-28 12:19:22,313 File:118.png	pred:False	
+2023-09-28 12:19:22,313 File:119.png	pred:False	
+2023-09-28 12:19:22,313 File:120.png	pred:False	
+2023-09-28 12:19:22,313 File:121.png	pred:True	
+2023-09-28 12:19:22,314 File:122.png	pred:False	
+2023-09-28 12:19:22,314 File:123.png	pred:True	
+2023-09-28 12:19:22,314 File:124.png	pred:True	
+2023-09-28 12:19:22,314 File:125.png	pred:True	
+2023-09-28 12:19:22,314 File:126.png	pred:True	
+2023-09-28 12:19:22,314 File:127.png	pred:True	
+2023-09-28 12:19:22,314 File:128.png	pred:False	
+2023-09-28 12:19:22,365 File:129.png	pred:True	
+2023-09-28 12:19:22,366 File:130.png	pred:True	
+2023-09-28 12:19:22,366 File:131.png	pred:False	
+2023-09-28 12:19:22,366 File:132.png	pred:False	
+2023-09-28 12:19:22,366 File:133.png	pred:True	
+2023-09-28 12:19:22,366 File:134.png	pred:True	
+2023-09-28 12:19:22,366 File:135.png	pred:True	
+2023-09-28 12:19:22,366 File:136.png	pred:True	
+2023-09-28 12:19:22,366 File:137.png	pred:True	
+2023-09-28 12:19:22,366 File:138.png	pred:True	
+2023-09-28 12:19:22,366 File:139.png	pred:True	
+2023-09-28 12:19:22,367 File:140.png	pred:False	
+2023-09-28 12:19:22,367 File:141.png	pred:False	
+2023-09-28 12:19:22,367 File:142.png	pred:False	
+2023-09-28 12:19:22,367 File:143.png	pred:False	
+2023-09-28 12:19:22,367 File:144.png	pred:False	
+2023-09-28 12:19:22,367 File:145.png	pred:False	
+2023-09-28 12:19:22,367 File:146.png	pred:False	
+2023-09-28 12:19:22,367 File:147.png	pred:False	
+2023-09-28 12:19:22,367 File:148.png	pred:False	
+2023-09-28 12:19:22,367 File:149.png	pred:False	
+2023-09-28 12:19:22,367 File:150.png	pred:False	
+2023-09-28 12:19:22,367 File:151.png	pred:False	
+2023-09-28 12:19:22,368 File:152.png	pred:False	
+2023-09-28 12:19:22,368 File:153.png	pred:False	
+2023-09-28 12:19:22,368 File:154.png	pred:False	
+2023-09-28 12:19:22,368 File:155.png	pred:False	
+2023-09-28 12:19:22,368 File:156.png	pred:False	
+2023-09-28 12:19:22,368 File:157.png	pred:False	
+2023-09-28 12:19:22,368 File:158.png	pred:False	
+2023-09-28 12:19:22,368 File:159.png	pred:False	
+2023-09-28 12:19:22,368 File:160.png	pred:False	
+2023-09-28 12:19:22,426 File:161.png	pred:False	
+2023-09-28 12:19:22,426 File:162.png	pred:False	
+2023-09-28 12:19:22,426 File:163.png	pred:False	
+2023-09-28 12:19:22,427 File:164.png	pred:False	
+2023-09-28 12:19:22,427 File:165.png	pred:False	
+2023-09-28 12:19:22,427 File:166.png	pred:False	
+2023-09-28 12:19:22,427 File:167.png	pred:False	
+2023-09-28 12:19:22,427 File:168.png	pred:False	
+2023-09-28 12:19:22,427 File:169.png	pred:False	
+2023-09-28 12:19:22,427 File:170.png	pred:False	
+2023-09-28 12:19:22,427 File:171.png	pred:False	
+2023-09-28 12:19:22,427 File:172.png	pred:False	
+2023-09-28 12:19:22,427 File:173.png	pred:False	
+2023-09-28 12:19:22,427 File:174.png	pred:False	
+2023-09-28 12:19:22,427 File:175.png	pred:False	
+2023-09-28 12:19:22,428 File:176.png	pred:False	
+2023-09-28 12:19:22,428 File:177.png	pred:False	
+2023-09-28 12:19:22,428 File:178.png	pred:False	
+2023-09-28 12:19:22,428 File:179.png	pred:False	
+2023-09-28 12:19:22,428 File:180.png	pred:False	
+2023-09-28 12:19:22,428 File:181.png	pred:False	
+2023-09-28 12:19:22,428 File:182.png	pred:False	
+2023-09-28 12:19:22,428 File:183.png	pred:False	
+2023-09-28 12:19:22,428 File:184.png	pred:False	
+2023-09-28 12:19:22,428 File:185.png	pred:False	
+2023-09-28 12:19:22,428 File:186.png	pred:False	
+2023-09-28 12:19:22,429 File:187.png	pred:False	
+2023-09-28 12:19:22,429 File:188.png	pred:False	
+2023-09-28 12:19:22,429 File:189.png	pred:False	
+2023-09-28 12:19:22,429 File:190.png	pred:False	
+2023-09-28 12:19:22,429 File:191.png	pred:False	
+2023-09-28 12:19:22,429 File:192.png	pred:True	
+2023-09-28 12:19:22,627 File:193.png	pred:True	
+2023-09-28 12:19:22,627 File:194.png	pred:True	
+2023-09-28 12:19:22,627 File:195.png	pred:True	
+2023-09-28 12:19:22,627 File:196.png	pred:True	
+2023-09-28 12:19:22,627 File:197.png	pred:True	
+2023-09-28 12:19:22,628 File:198.png	pred:True	
+2023-09-28 12:19:22,628 File:199.png	pred:True	
+2023-09-28 12:19:22,628 File:200.png	pred:False	

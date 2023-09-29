@@ -1,0 +1,1 @@
+python tools/inference.py --cfg experiments/csc/cscinf_hrnet_w18_kp10.yaml --model-file hrnetv2_pretrained/csc_best10.pth --input-dir /root/autodl-tmp/flw_imgs/video_seq_01/true --output-dir /root/autodl-tmp/flw_imgs/video_seq_01

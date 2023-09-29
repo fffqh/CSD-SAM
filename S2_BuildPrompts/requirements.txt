@@ -1,0 +1,6 @@
+hdf5storage
+yacs
+pandas
+opencv-python
+scipy
+tensorboardX

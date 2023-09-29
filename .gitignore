@@ -1,0 +1,6 @@
+
+*.mp4
+S0_OpticalFlow/checkpoints/*
+S1_Classification/checkpoints/*
+S2_BuildPrompts/hrnetv2_pretrained/*
+S3_SAM_CSD/checkpoints/*
